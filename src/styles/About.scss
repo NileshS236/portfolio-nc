@@ -1,0 +1,666 @@
+$blue: #0fb5da;
+$green: #1e9214;
+$black: #1f2024;
+$red: #ed1919;
+
+// About
+.about {
+  background-color: rgb(10, 1, 19);
+  min-height: 80vh;
+  position: relative;
+
+  // About Decoration---------------------------------
+  .about__decoration {
+    position: absolute;
+    left: 30px;
+    // Decoration child 1------------
+    &:nth-child(1) {
+      width: 1px;
+      bottom: 0;
+      background-color: $green;
+    }
+    // Decoration child 2------------
+    &:nth-child(2) {
+      width: 2px;
+      bottom: 50%;
+      background-color: $blue;
+      margin-bottom: 5px;
+      margin-left: -0.5px;
+    }
+    // Decoration child 3------------
+    &:nth-child(3) {
+      width: 1px;
+      bottom: 60%;
+      background-color: $red;
+      margin-bottom: 10px;
+    }
+  }
+  // About Decorattion Animations---------------------------------
+  .about__decoration.animate {
+    // Animated decoration child 1------------
+    &:nth-child(1) {
+      height: 0;
+      animation: lengthen1 0.4s linear forwards;
+      @keyframes lengthen1 {
+        from {
+          height: 0;
+        }
+        to {
+          height: 50%;
+        }
+      }
+    }
+    // Animated decoration child 2------------
+    &:nth-child(2) {
+      height: 0;
+      animation: lengthen2 0.2s linear forwards;
+      animation-delay: 0.4s;
+      @keyframes lengthen2 {
+        from {
+          height: 0;
+        }
+        to {
+          height: 10%;
+        }
+      }
+    }
+    // Animated decoration child 3------------
+    &:nth-child(3) {
+      height: 0;
+      animation: lengthen3 0.3s linear forwards;
+      animation-delay: 0.8s;
+      @keyframes lengthen3 {
+        from {
+          height: 0;
+        }
+        to {
+          height: 20%;
+        }
+      }
+    }
+  }
+
+  // About Title---------------------------------
+  .about__title {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding: 50px 0 0 100px;
+    text-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    // About Title h1------------
+    h1 {
+      font-family: "Open Sans", monospace;
+      font-size: 35px;
+      font-weight: 700;
+      margin-right: 30px;
+      color: whitesmoke;
+
+      @media screen and (max-width: 840px) {
+        font-size: 25px;
+      }
+      @media screen and (max-width: 350px) {
+        margin-right: 15px;
+      }
+      @media screen and (max-width: 330px) {
+        font-size: 20px;
+      }
+      @media screen and (max-width: 270px) {
+        margin: 0;
+        width: 100%;
+        text-align: center;
+      }
+    }
+    // About Title span------------
+    span {
+      height: 1px;
+      background-color: darkgray;
+      box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+
+      @media screen and (max-width: 270px) {
+        display: none;
+      }
+    }
+    @media screen and (max-width: 450px) {
+      padding-left: 30px;
+    }
+    @media screen and (max-width: 270px) {
+      padding-left: 0;
+    }
+  }
+  // About Title Animations---------------------------------
+  .about__title.animate {
+    // About Title Animated span------------
+    span {
+      width: 0;
+      animation: lengthen 0.3s linear forwards;
+      animation-delay: 0.3s;
+      @keyframes lengthen {
+        from {
+          width: 0%;
+        }
+        to {
+          width: 30%;
+        }
+      }
+      @media screen and (max-width: 840px) {
+        @keyframes lengthen {
+          from {
+            width: 0%;
+          }
+          to {
+            width: 60%;
+          }
+        }
+      }
+      @media screen and (max-width: 560px) {
+        @keyframes lengthen {
+          from {
+            width: 0%;
+          }
+          to {
+            width: 50%;
+          }
+        }
+      }
+    }
+  }
+
+  // About Body---------------------------------
+  .about__body {
+    display: flex;
+    justify-content: center;
+    // align-items: center;
+    min-height: 500px;
+    // background-color: coral;
+    // margin-top: 50px;
+
+    //Wanna continue from here
+    @media screen and (max-width: 840px) {
+      flex-direction: column-reverse;
+      justify-content: space-between;
+    }
+
+    // About Body Left---------------------------------
+    .about__left {
+      padding-right: 50px;
+      flex: 0.5;
+
+      @media screen and (max-width: 1330px) {
+        flex: 0.6;
+      }
+      @media screen and (max-width: 1165px) {
+        flex: 0.7;
+      }
+      @media screen and (max-width: 1030px) {
+        flex: 0.8;
+      }
+      @media screen and (max-width: 930px) {
+        flex: 0.85;
+      }
+      @media screen and (max-width: 890px) {
+        flex: 0.9;
+      }
+      // background-color: #0fb5da;
+      height: 100%;
+      .about__leftBody {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        // align-items: center;
+        // justify-content: space-between;
+        width: 100%;
+        // background-color: blue;
+        padding: 30px;
+        .about__leftBody__details {
+          color: whitesmoke;
+          font-size: 16px;
+          font-family: "Raleway", monospace;
+          font-weight: 300;
+          letter-spacing: 1px;
+          // flex: 0.7;
+          align-items: center;
+          padding: 30px;
+          height: 100%;
+          // background-color: #1e9214;
+          > p + p {
+            margin: 13px 0;
+          }
+
+          @media screen and (max-width: 840px) {
+            padding: 0;
+            width: 65%;
+            p {
+              text-align: center;
+              font-size: 14px;
+            }
+          }
+          @media screen and (max-width: 450px) {
+            width: 70%;
+            p {
+              font-size: 13px;
+            }
+          }
+          @media screen and (max-width: 270px) {
+            width: 70%;
+            p {
+              font-size: 11px;
+            }
+          }
+        }
+        hr {
+          color: darkgray;
+          opacity: 0.1;
+          margin-bottom: 30px;
+          width: 70%;
+
+          @media screen and (max-width: 840px) {
+            margin: 0;
+            margin: 20px 0 30px 0;
+          }
+        }
+        .about__left__techTitle {
+          min-height: auto;
+          padding: 0 30px;
+          p {
+            color: whitesmoke;
+            opacity: 0.8;
+            font-size: 15px;
+
+            @media screen and (max-width: 1360px) {
+              font-size: 14px;
+            }
+            @media screen and (max-width: 840px) {
+              // padding: 0;
+              text-align: center;
+            }
+            @media screen and (max-width: 450px) {
+              padding: 0 0 10px 0;
+              margin: 0 10px;
+              font-size: 13px;
+              text-align: center;
+            }
+          }
+          @media screen and (max-width: 840px) {
+            padding-left: 0;
+          }
+          @media screen and (max-width: 270px) {
+            padding: 0 10px 15px 10px;
+          }
+        }
+
+        .about__leftBody__techs {
+          display: flex;
+          flex-direction: column;
+          width: 75%;
+          height: 110px;
+          flex-wrap: wrap;
+          color: whitesmoke;
+          opacity: 0.8;
+          margin-top: 15px;
+          padding: 0 30px;
+          .tech {
+            display: flex;
+            align-items: center;
+            font-size: 14px;
+            font-family: "Fira Code", monospace;
+            margin: 8px 30px 8px 8px;
+            letter-spacing: 1px;
+            svg {
+              margin-right: 3px;
+              font-size: 11px;
+            }
+          }
+          @media screen and (max-width: 840px) {
+            width: 60%;
+          }
+          @media screen and (max-width: 777px) {
+            width: 70%;
+          }
+          @media screen and (max-width: 600px) {
+            width: 75%;
+            padding-left: 0px;
+          }
+          @media screen and (max-width: 450px) {
+            height: auto;
+          }
+          @media screen and (max-width: 300px) {
+            padding-right: 0;
+          }
+          @media screen and (max-width: 250px) {
+            padding: 0;
+          }
+        }
+
+        @media screen and (max-width: 840px) {
+          padding: 0;
+          align-items: center;
+          justify-content: center;
+        }
+      }
+
+      @media screen and (max-width: 840px) {
+        padding: 0;
+        padding: 50px 25px 30px 25px;
+      }
+      @media screen and (max-width: 600px) {
+        padding: 0;
+        padding: 50px 0 30px 0;
+      }
+    }
+
+    // About Body Right---------------------------------
+    .about__right {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      height: 450px;
+      // background-color: BLUE;
+      padding: 60px 30px 10px 30px;
+      // About Right Image------------
+      .about__image {
+        width: fit-content;
+        height: fit-content;
+        position: relative;
+        border-top: 4px solid $blue;
+        border-bottom: 4px solid $blue;
+        transition: 0.5s ease-in-out;
+        //About Right Image span------------
+        .rectangle {
+          &:first-child {
+            width: 190px;
+            position: absolute;
+            background-color: $blue;
+            z-index: 1001;
+            opacity: 0.3;
+            transition: 0.3s ease-in-out;
+            transform-origin: top;
+
+            @media screen and (max-width: 1360px) {
+              width: 150px;
+            }
+            @media screen and (max-width: 890px) {
+              width: 120px;
+            }
+            @media screen and (max-width: 330px) {
+              width: 100px;
+            }
+          }
+          &:last-child {
+            position: absolute;
+            height: 240px;
+            width: 190px;
+            right: -50%;
+            top: 55%;
+            transform: translate(-42%, -42%);
+            border: 2px solid $blue;
+            z-index: 999;
+            transition: 0.2s ease-in-out;
+
+            @media screen and (max-width: 1360px) {
+              height: 200px;
+              width: 150px;
+            }
+            @media screen and (max-width: 890px) {
+              height: 156px;
+              width: 120px;
+            }
+            @media screen and (max-width: 330px) {
+              height: 126px;
+              width: 100px;
+            }
+          }
+        }
+        // About Right Image image------------
+        img {
+          height: 240px;
+          width: 190px;
+          padding: 4px 4px 0 4px;
+          transition: 0.2s ease-in-out;
+          position: relative;
+          z-index: 1000;
+          top: -50px;
+          opacity: 0;
+
+          @media screen and (max-width: 1360px) {
+            height: 200px;
+            width: 150px;
+          }
+          @media screen and (max-width: 890px) {
+            height: 156px;
+            width: 120px;
+          }
+          @media screen and (max-width: 330px) {
+            height: 126px;
+            width: 100px;
+          }
+        }
+
+        &:hover {
+          .rectangle {
+            &:first-child {
+              opacity: 0;
+              z-index: 999;
+            }
+            &:last-child {
+              transform: translate(-47%, -47%);
+            }
+          }
+        }
+      }
+
+      .about__resume {
+        transition: clip-path 1s;
+        margin-top: 30px;
+        &:hover {
+          .design {
+            &:last-child {
+              clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+            }
+          }
+        }
+        .MuiButton-root {
+          position: relative !important;
+          color: white;
+          border-radius: 0 !important;
+          height: 46px !important;
+          width: 206px !important;
+          transition: 0.3s;
+
+          .MuiTouchRipple-root {
+            position: absolute;
+            z-index: 10000;
+          }
+
+          .design {
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly;
+            &:nth-child(1) {
+              position: absolute;
+              background-color: $blue;
+              color: $black;
+              height: 100%;
+              width: 100%;
+              clip-path: polygon(0 0, 100% 0, 50% 50%, 0% 100%);
+              transition: 0.3s;
+              transform: translate(25%, -25%);
+              z-index: 1;
+
+              &:hover {
+                z-index: 10;
+                clip-path: polygon(0 0, 100% 0%, 100% 100%, 0% 100%);
+              }
+            }
+            &:nth-child(2) {
+              position: absolute;
+              background-color: $black;
+              color: $blue;
+              height: 100%;
+              width: 100%;
+              clip-path: polygon(50% 50%, 100% 0, 100% 100%, 0% 100%);
+              transition: 0.3s;
+              z-index: 1;
+              &:hover {
+                clip-path: polygon(0 0, 100% 0%, 100% 100%, 0% 100%);
+              }
+            }
+
+            @media screen and (max-width: 890px) {
+              font-size: 12px;
+            }
+            @media screen and (max-width: 330px) {
+              font-size: 10px;
+            }
+            @media screen and (max-width: 330px) {
+              svg {
+                font-size: 13px;
+              }
+            }
+          }
+
+          @media screen and (max-width: 1360px) {
+            height: 40px !important;
+            width: 190px !important;
+          }
+          @media screen and (max-width: 890px) {
+            height: 35px !important;
+            width: 170px !important;
+          }
+          @media screen and (max-width: 330px) {
+            height: 30px !important;
+            width: 140px !important;
+          }
+        }
+      }
+
+      @media screen and (max-width: 1360px) {
+        height: 400px;
+      }
+      @media screen and (max-width: 890px) {
+        height: 320px;
+      }
+      @media screen and (max-width: 840px) {
+        height: fit-content;
+        justify-content: space-evenly;
+        width: 60%;
+        padding: 0;
+        padding-top: 30px;
+        flex-direction: row;
+      }
+      @media screen and (max-width: 700px) {
+        flex-direction: column;
+      }
+    }
+    @media screen and (max-width: 840px) {
+      align-items: center;
+    }
+  }
+  // About Body Right Animations---------------------------------
+  .about__right.animate {
+    // About Right Image Animated span------------
+    .about__image {
+      span {
+        &:first-child {
+          height: 0;
+          animation: scaling 0.5s linear forwards;
+          @keyframes scaling {
+            from {
+              height: 0;
+            }
+            to {
+              height: 244px;
+            }
+          }
+
+          @media screen and (max-width: 1360px) {
+            @keyframes scaling {
+              from {
+                height: 0;
+              }
+              to {
+                height: 204px;
+              }
+            }
+          }
+          @media screen and (max-width: 890px) {
+            @keyframes scaling {
+              from {
+                height: 0;
+              }
+              to {
+                height: 160px;
+              }
+            }
+          }
+          @media screen and (max-width: 330px) {
+            @keyframes scaling {
+              from {
+                height: 0;
+              }
+              to {
+                height: 130px;
+              }
+            }
+          }
+        }
+        &:last-child {
+          animation: translation 0.5s linear;
+
+          @keyframes translation {
+            from {
+              transform: translate(-20%, -20%);
+            }
+            to {
+              transform: translate(-42%, -42%);
+            }
+          }
+        }
+      }
+      // About Right Image Animated image------------
+      img {
+        animation: bounce 0.5s linear forwards;
+        animation-delay: 0.6s;
+        @keyframes bounce {
+          from {
+            top: -50px;
+            opacity: 0;
+          }
+          to {
+            top: 0;
+            opacity: 1;
+          }
+        }
+      }
+    }
+    // About Right Resume Animation------------
+    .about__resume {
+      .MuiButton-root {
+        .design {
+          &:nth-child(1) {
+            animation: slide1 0.7s linear forwards;
+            @keyframes slide1 {
+              from {
+                transform: translate(25%, -25%);
+              }
+              to {
+                transform: translate(0, 0);
+              }
+            }
+          }
+          &:nth-child(2) {
+            animation: slide2 0.7s linear forwards;
+            @keyframes slide2 {
+              from {
+                transform: translate(-50%, 50%);
+              }
+              to {
+                transform: translate(0, 0);
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
